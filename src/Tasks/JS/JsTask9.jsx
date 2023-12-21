@@ -1,7 +1,7 @@
 
 
 
-export const Task9 = () => {
+export const JsTask9 = () => {
 
     // 1
     const arr1 = [1, 2, 3]

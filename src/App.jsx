@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import {Task9} from './Tasks/JS/Task9.jsx'
+import {JsTask9} from './Tasks/JS/JsTask9.jsx'
+import {FrontendTask} from "./Tasks/Frontend/FrontendTask.jsx";
 import './App.css'
 
 function App() {
@@ -9,27 +10,8 @@ function App() {
 
   return (
     <>
-        <Task9/>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+        <JsTask9/>
+        <FrontendTask/>
     </>
   )
 }
