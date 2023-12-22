@@ -37,7 +37,7 @@ const data = {
     ]
 }
 export const FrontendTask3 = () => {
-    return <main >
+    return <main className='main'>
         <section className="flex-wrapper">
             <h2>Flex</h2>
             <div className="flex-wrapper__layout1 wrapper-block">
@@ -129,12 +129,12 @@ export const FrontendTask3 = () => {
             </div>
             <div className="grid-wrapper__layout9 wrapper-block">
                 {createItem(4).map((el) =>
-                    <div key={el.place} className="grid-wrapper__layout9-item item"></div>
+                    <div key={el} className="grid-wrapper__layout9-item item"></div>
                 )}
             </div>
             <div className="grid-wrapper__layout10 wrapper-block">
                 {createItem(5).map((el) =>
-                    <div key={el.place} className="grid-wrapper__layout10-item item"></div>
+                    <div key={el} className="grid-wrapper__layout10-item item"></div>
                 )}
             </div>
             <div className="grid-wrapper__layout11 wrapper-block">
@@ -145,6 +145,12 @@ export const FrontendTask3 = () => {
                 <footer className='grid-wrapper__layout11-footer item'>footer</footer>
             </div>
         </section>
+        <div className="columns wrapper-block">
+            <div className="columns__item item">1</div>
+            <div className="columns__item item">2</div>
+            <div className="columns__item item">3</div>
+
+        </div>
 
     </main>
 }

@@ -1,3 +1,8 @@
+.main
+  display: flex
+  flex-direction: column
+
+
 .wrapper-block
   width: 795px
   padding: 30px 20px
@@ -12,8 +17,8 @@
   display: flex
   flex-direction: column
   gap: 20px
-  //max-width: 1200px
-  //margin: 0 auto
+  max-width: 1200px
+  margin: 0 auto
   &__layout1
     display: flex
     gap: 10px
@@ -112,6 +117,8 @@
 .grid-wrapper
   display: grid
   gap: 20px
+  max-width: 1200px
+  margin: 0 auto
   &__layout1
     display: grid
     grid-template-columns: repeat(5, 1fr)
@@ -240,3 +247,10 @@
       grid-area: ct
     &-footer
       grid-area: ft
+
+.columns
+  columns: 3 20px
+  margin: 10px auto
+  &__item
+    height: 200px
+

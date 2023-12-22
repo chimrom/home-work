@@ -1,18 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import {JsTask9} from './Tasks/JS/JsTask9.jsx'
+import { Routes, Route, Navigate } from "react-router-dom";
+import {Layout} from "./pages/Layout/Layout.jsx";
+import {MainPage} from "./pages/MainPage/MainPage.jsx";
+import {DynamicComponentJS} from "./Tasks/JS/index.jsx";
+import {JSMain} from "./pages/JSMain/JSMain.jsx";
 import {FrontendTask} from "./Tasks/Frontend/FrontendTask.jsx";
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-        <JsTask9/>
-        <FrontendTask/>
-    </>
+    <Routes>
+        <Route path="/" element={<Layout />}>
+            <Route index element={<MainPage />} />
+            <Route path="/js" element={<JSMain/>} />
+            <Route path="/js/:id" element={<DynamicComponentJS/>} />
+            <Route path="/frontend" element={<FrontendTask/>} />
+        </Route>
+    </Routes>
   )
 }
 
