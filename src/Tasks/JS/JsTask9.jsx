@@ -94,6 +94,9 @@ export const JsTask9 = () => {
     console.log('7',getSomething(hardArray));
     console.log('используя flat и бесконечность',hardArray.flat(Infinity)) //возвращает новый массив
     console.log('если не важен тип данныъ',hardArray.toString().split(',')) //возвращает новый массив со строками
+    console.log('если не важен тип данныъ',hardArray.toString().split(',')) //возвращает новый массив со строками
+    console.log('если не важен тип данныъ',hardArray.toString().split(',')) //возвращает новый массив со строками console.log('если не важен тип данныъ',hardArray.toString().split(',')) //возвращает новый массив со строками
+
 
     // 8
     const unSortedArray = [3, 4, 14, 1, 2, 34, 7]

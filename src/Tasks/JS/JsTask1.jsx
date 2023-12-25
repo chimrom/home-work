@@ -3,7 +3,7 @@ import '../../utils/jqueryWrapper.js'
 
 export class JsTask1 extends Component {
     constructor(props){
-        super(props)
+        super(props);
         this.state = {
             post: 0,
             message: ''
@@ -64,8 +64,6 @@ export class JsTask1 extends Component {
             .catch((error) => {
                 console.log('Error:', error);
             });
-
-
     }
     render() {
         return (
