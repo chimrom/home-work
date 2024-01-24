@@ -10,7 +10,7 @@ export const UserCard = ({ fio, id, level, role, handleDelete }) => {
                     <div className={styles.role}>{role}</div>
                 </div>
             </div>
-            <button onClick={() => handleDelete(id)}>delete</button>
+            <button onClick={() => handleDelete(id,fio)}>delete</button>
         </div>
     );
 };

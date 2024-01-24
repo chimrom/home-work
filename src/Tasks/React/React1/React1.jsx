@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState} from "react";
 import data from "../../../developers.json";
+import {addToLocalStorage, getAllStoredData} from "../../../utils/localStorage.js";
 import { UserCard } from "../components/UsersCard/UsersCard";
 
 import styles from "./React1.module.css";
@@ -17,6 +18,7 @@ export const React1 = () => {
         level: "",
         role: "",
     });
+    console.log(getAllStoredData())
 
     const isFilter = filters.fio && filters.level && filters.role;
     const filteredDevelopers = isFilter ? filteredData() : developers;
@@ -37,11 +39,13 @@ export const React1 = () => {
 
     const handleAddNewDeveloper = () => {
         setDepelopers((prev) => [...prev, { ...newDeveloper, id: Date.now() }]);
+        addToLocalStorage('add', `Был добавлен ${newDeveloper.fio}`)
         setNewDeveloper({ ...newDeveloper, fio: "", level: "", role: "" });
     };
 
-    const handleDelete = (id) => {
+    const handleDelete = (id, fio) => {
         setDepelopers((prev) => prev.filter((el) => id !== el.id));
+        addToLocalStorage('delete', `Был удален ${fio}`)
     };
 
     function filteredData() {
@@ -57,6 +61,8 @@ export const React1 = () => {
     const clearFilter = () => {
         setFilters({ ...filters, fio: "", level: "", role: "" });
     };
+
+
 
     return (
         <div className={styles.wrapper}>

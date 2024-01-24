@@ -1,4 +1,4 @@
-import {useState, useRef} from "react";
+import {useState, useRef, useMemo, memo, useCallback} from "react";
 import {useFetchData} from "../../../hooks/useFetchData.js";
 import {useOutsideClick} from "../../../hooks/useOutsideClick.js";
 import {useResize} from "../../../hooks/useResize.js";
@@ -6,6 +6,10 @@ import {React2Context} from "../React2Context.jsx";
 import {Child} from "./Child.jsx";
 
 export const React2 = () => {
+    const envExample = import.meta.env.VITE_SOME_KEY
+    console.log({envExample})
+    console.log(import.meta.env)
+
     const [isOpen, setIsOpen] = useState(false)
     const {data, loading, error} = useFetchData('https://jsonplaceholder.typicode.com/posts')
     const ref = useRef(null)
@@ -14,16 +18,19 @@ export const React2 = () => {
     const handleClick = () => {
         setIsOpen(false)
     };
+
+
     useOutsideClick(ref, handleClick)
-    // const handleButtonClick = () => {
-    //     setIsActive(true);
-    // };
+
     if(loading){
         return <div>Загрузка...</div>
     }
+
     if(error) {
         return <div style={{color: 'red'}}>{error}</div>
     }
+
+
     return <div>
         {data.length ? <div>Пришло {data.length} элементов</div> : <div>Данные отсутствуют</div>}
 
